@@ -45,7 +45,13 @@ export async function generateTrip(
   );
 
   const data = await response.json();
-  const text = data.candidates[0].content.parts[0].text;
-  const clean = text.replace(/```json|```/g, "").trim();
-  return JSON.parse(clean);
+console.log("Gemini response:", JSON.stringify(data));
+
+if (!data.candidates || !data.candidates[0]) {
+  throw new Error(JSON.stringify(data));
+}
+
+const text = data.candidates[0].content.parts[0].text;
+const clean = text.replace(/```json|```/g, "").trim();
+return JSON.parse(clean);
 }
