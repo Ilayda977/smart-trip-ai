@@ -1,73 +1,27 @@
-# React + TypeScript + Vite
+#  SmartTrip AI — Yapay Zeka Destekli Akıllı Seyahat Asistanı
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SmartTrip AI; seyahat planlarını bütçe, tempo, seyahat modu ve konaklama süresi gibi tamamen kişiselleştirilmiş parametrelere göre şekillendiren, tarayıcı tabanlı çalışan yenilikçi bir web uygulamasıdır. Herhangi bir backend bağımlılığı olmadan, doğrudan istemci tarafında (client-side) LLM entegrasyonu ve dinamik veri yönetimi sunar.
 
-Currently, two official plugins are available:
+ **[SmartTrip AI Canlı Uygulamasını Deneyin (https://smart-trip-ai-lovat.vercel.app/#)](#)** | 🛠️ **Vite + React + TypeScript**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Öne Çıkan Gelişmiş Özellikler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-  **Kararlı Yapay Zeka Çıktıları (Structured Outputs):** Gemini 2.5 Flash modeline katı bir JSON şeması (`responseSchema`) dikte edilerek modelin her zaman %100 kararlı ve arayüze tam uyumlu veri üretmesi sağlandı.
+- 🌙 **Dinamik Dark Mode Geçişi:** Sağ üst köşede yer alan tema butonuyla anlık geçiş imkanı. Sadece arka planı karartmakla kalmaz, pastel gradyanlı seyahat kartlarının tonlarını da gözü yormayacak şekilde optimize eder.
+- 💰 **Gelişmiş Bütçe Takibi:** AI tarafından üretilen tahmini maliyetleri (`estimatedCost`) gün bazında ve seyahat özeti olarak anlık hesaplayan dinamik bütçe hesaplama motoru.
+- 🌤️ **Open-Meteo API Entegrasyonu:** Herhangi bir API key gerektirmeyen ücretsiz servis ile seyahat tarihine göre anlık sıcaklık ve durum takibi. Yağmurlu günlerde otomatik olarak kırmızı bir `İç mekan öner!` uyarısı tetiklenir.
+- 🔄 **Aktivite Değiştirme (Regenerate):** Rota üzerinde beğenilmeyen tek bir aktivite olduğunda, diğer günlerin akışını bozmadan sadece o karta özel Gemini üzerinden anlık alternatif konum üretme yeteneği.
+- ↕️ **Sürükle-Bırak (Drag and Drop):** Aynı gün içerisindeki aktivitelerin sıralamasını mouse ile tutup sürükleyerek anında değiştirebilme konforu.
+- 📤 **Rota Paylaşma (Export):** "Dışa Aktar" butonu yardımıyla tüm seyahat planını yerel ipuçları ve bütçe özetleriyle birlikte `.txt` dosyası olarak bilgisayara indirebilme.
+- 💀 **Skeleton Loading & 🎉 Konfeti Animasyonu:** Sayfa yüklenirken gözü yoran spinner'lar yerine şık placeholder kart animasyonları parlar. Rota üzerindeki tüm yerler gezilip ilerleme çubuğu %100 yapıldığında ise ekranda canvas konfetileri patlar.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Kullanılan Teknolojiler ve Servisler
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Frontend:** React 18, TypeScript, Vite
+- **Stil ve Animasyon:** Tailwind CSS, Canvas Confetti
+- **Yapay Zeka:** `@google/generative-ai` (Gemini 2.5 Flash)
+- **Harici API'ler:** Open-Meteo API (Hava Durumu), Unsplash (Statik Akıllı Şehir Görselleri)
