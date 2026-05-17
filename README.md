@@ -2,7 +2,7 @@
 
 SmartTrip AI; seyahat planlarını bütçe, tempo, seyahat modu ve konaklama süresi gibi tamamen kişiselleştirilmiş parametrelere göre şekillendiren, tarayıcı tabanlı çalışan yenilikçi bir web uygulamasıdır. Herhangi bir backend bağımlılığı olmadan, doğrudan istemci tarafında (client-side) LLM entegrasyonu ve dinamik veri yönetimi sunar.
 
- **[SmartTrip AI Canlı Uygulamasını Deneyin (https://smart-trip-ai-lovat.vercel.app/#)](#)** | 🛠️ **Vite + React + TypeScript**
+  **[SmartTrip AI Canlı Uygulamasını Deneyin](https://smart-trip-ai-lovat.vercel.app/)** | 🛠️ **Vite + React + TypeScript**
 
 ---
 
